@@ -1,0 +1,26 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashSet;
+
+public class AntonLetters {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String inp = br.readLine();
+        inp = inp.replace("{", "");
+        inp = inp.replace("}", "");
+        String[] str = inp.split(", ");
+        if (inp.length() == 0) {
+            System.out.println(0);
+            return;
+        }
+        HashSet<String> hs = new HashSet<>();
+        for (String s : str) {
+            //System.out.println( s);
+            hs.add(s);
+        }
+        System.out.println(hs.size());
+
+
+    }
+}
