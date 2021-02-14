@@ -1,0 +1,28 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Hitthelottery996A {
+    public static void main(String[] args)throws IOException {
+        BufferedReader br = new BufferedReader( new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int bills = 0;
+        while(n!=0)
+        {
+            bills += n/100 ;
+            n = n%100;
+            bills += n/20;
+            n = n%20;
+            bills +=n/10;
+            n = n%10;
+            bills +=n/5;
+            n = n%5;
+            bills +=n/1;
+            n = n%1;
+
+        }
+        System.out.println(bills);
+
+
+    }
+}
