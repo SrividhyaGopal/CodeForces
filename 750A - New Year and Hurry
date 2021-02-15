@@ -1,0 +1,45 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+
+public class NewYear750A {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader( new InputStreamReader(System.in));
+        String[] s = br.readLine().split(" ");
+        int sums = Integer.parseInt(s[0]);
+        if(sums ==10)
+        {
+            sums =9;
+          //  System.out.println("sum is 9");
+        }
+        int timereqd = Integer.parseInt(s[1]);
+        HashMap<Integer,Integer> hm = new HashMap<>();
+
+        hm.put(1,5);
+        hm.put(2,15);
+        hm.put(3,30);
+        hm.put(4,50);
+        hm.put(5,75);
+        hm.put(6,105);
+        hm.put(7,140);
+        hm.put(8,180);
+        hm.put(9,225);
+        hm.put(10,275);
+        int timeavailable = 240-timereqd;
+        if( timeavailable <=0)
+        {
+            System.out.println(0);
+            return;
+        }
+        if(timeavailable >=5) {
+            while (hm.get(sums) > timeavailable) {
+                sums = sums - 1;
+            }
+            System.out.println(sums);
+            return;
+        }
+        System.out.println(0);
+
+    }
+}
