@@ -1,0 +1,69 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+public class SumofRoundNos1352A {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int test = Integer.parseInt(br.readLine());
+        int number[] = new int[test];
+        for(int i =0;i<test;i++) {
+            number[i] = Integer.parseInt(br.readLine());
+        }
+
+        for (int i =0;i<test;i++)
+        {
+            int count = 0;
+            ArrayList<Integer> list = new ArrayList<>();
+            int no = number[i];
+            int tth = no/10000;
+            no = no%10000;
+            if(tth >0) {
+                count++;
+                tth = tth *10000;
+                list.add(tth);
+            }
+
+            int th = no/1000;
+            no = no%1000;
+            if(th >0) {
+                count++;
+                th = th *1000;
+                list.add(th);
+            }
+
+
+            int hun = no/100;
+            no = no%100;
+            if(hun >0)
+            {
+                count ++;
+                hun = hun *100;
+                list.add(hun);
+            }
+
+            int t = no/10;
+            int o = no%10;
+            if(t >0) {
+                count++;
+                t = t *10;
+                list.add(t);
+            }
+
+
+            if(o>0) {
+                count++;
+                list.add(o);
+            }
+            System.out.println(count);
+            for(int a:list){
+                System.out.print(a + " ");
+            }
+            System.out.println();
+
+        }
+
+    }
+
+}
