@@ -1,0 +1,46 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class TeamOlympiod490A {
+    public static void main(String[] args) throws IOException {
+        Scanner in = new Scanner(System.in);
+
+        int n = in.nextInt();
+        int[] progarr = new int[n];
+        int [] mathsarr = new int[n];
+        int[] pearr  = new int[n];
+        int prog=0;
+        int math=0;
+        int pe =0;
+        for(int i =0;i<n;i++)
+        {
+            int val = in.nextInt();
+            if(val == 1)
+            {
+                progarr[prog++]=i+1;
+
+            }
+            else if(val ==2)
+            {
+                mathsarr[math++]=i+1;
+            }
+            else{
+                pearr[pe++]=i+1;
+            }
+        }
+        int min = prog;
+        if(min>math)
+        {
+            min =math;
+        }
+        if(min>pe)
+        {
+            min =pe;
+        }
+        System.out.println(min);
+        for(int i =0;i<min;i++)
+        {
+            System.out.println(progarr[i] + " " +mathsarr[i] +" "+ pearr[i]);
+        }
+    }
+}
