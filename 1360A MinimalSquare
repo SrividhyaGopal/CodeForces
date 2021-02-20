@@ -1,0 +1,36 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+public class MinimalSquare1360A {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int testcase = Integer.parseInt(br.readLine());
+        for(int i=0;i<testcase;i++)
+        {
+            String[] s = br.readLine().split(" ");
+            int s1 = Integer.parseInt(s[0]);
+            int s2 = Integer.parseInt(s[1]);
+            int max=0;
+            int side =0;
+            if(s1>s2)
+            {
+                max =s1;
+                side =2*s2;
+
+            }
+            else
+            {
+                max =s2;
+                side = s1*2;
+            }
+            if(max >side)
+            {
+                System.out.println(max*max);
+            }
+            else {
+                System.out.println(side*side);
+            }
+
+        }
+    }
+}
