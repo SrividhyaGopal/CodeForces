@@ -1,0 +1,59 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+public class EvenArray1367B {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int testcase =Integer.parseInt(br.readLine());
+        for(int i =0;i<testcase;i++)
+        {
+            int length = Integer.parseInt(br.readLine());
+            String[] inparr = br.readLine().split(" ");
+            ArrayList<Integer> evenlist = new ArrayList<>();
+            ArrayList<Integer> oddlist = new ArrayList<>();
+            for(int k=0;k<inparr.length;k++)
+            {
+                if(k%2 ==0)
+                {
+                    if(Integer.parseInt(inparr[k])%2 == 0)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        evenlist.add(k);
+                    }
+                }
+                if(k%2 !=0)
+                {
+                    if(Integer.parseInt(inparr[k])%2 != 0)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        oddlist.add(k);
+                    }
+                }
+            }
+            if(oddlist.isEmpty() && evenlist.isEmpty())
+            {
+                System.out.println(0);
+                continue;
+            }
+            else if(oddlist.size() == evenlist.size())
+            {
+                System.out.println(oddlist.size());
+                continue;
+            }
+            else
+            {
+                System.out.println(-1);
+                continue;
+            }
+        }
+
+    }
+}
