@@ -1,0 +1,35 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashSet;
+
+public class RestorethePermutationbyMerger1385B {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int testcase = Integer.parseInt(br.readLine());
+        for(int i =0;i<testcase;i++)
+        {
+            int n = Integer.parseInt(br.readLine());
+            String[] s = br.readLine().split(" ");
+            HashSet<String> hs = new HashSet<String>();
+            ArrayList<String> al = new ArrayList<>();
+            int index =0;
+            for(int k =0;k<s.length;k++)
+            {
+                if(!hs.contains(s[k]) )
+                {
+                    hs.add(s[k]);
+                    al.add(index,s[k]);
+                    index++;
+                }
+
+            }
+            for(String l:al)
+            {
+                System.out.print(l + " ");
+            }
+            System.out.println();
+        }
+    }
+}
